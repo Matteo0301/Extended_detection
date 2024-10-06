@@ -1,0 +1,28 @@
+{
+  "name": "extended_detection",
+  "version": "1.0.0",
+  "description": "Project for the \"Extended detection and response to security incidents\" course",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matteo0301/Extended_detection.git"
+  },
+  "author": "Matteo Mariotti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matteo0301/Extended_detection/issues"
+  },
+  "homepage": "https://github.com/Matteo0301/Extended_detection#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
