@@ -1,5 +1,14 @@
 // Import the 'express' module
 import express from 'express';
+const mysql = require('mysql2');
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'matteo',
+    database: 'test',
+    password: 'password',
+});
+
 
 // Create an Express application
 const app = express();
@@ -9,8 +18,16 @@ const port = 3000;
 
 // Define a route for the root path ('/')
 app.get('/', (req, res) => {
-    // Send a response to the client
-    res.send('Hello, TypeScript + Node.js + Express!');
+
+    // A simple SELECT query
+    connection.query(
+        'SELECT name FROM `test`',
+        function (err: any, results: any, fields: any) {
+            console.log(results); // results contains rows returned by server
+            console.log(fields); // fields contains extra meta data about results, if available
+            res.send('Hello ' + results[0]['name']);
+        }
+    );
 });
 
 // Start the server and listen on the specified port
